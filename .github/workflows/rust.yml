@@ -33,12 +33,14 @@ jobs:
     steps:
 
     - uses: actions/checkout@v4
-    - name: Cache sum stuff thats better that doesnt eat my ci minutes
+    - name: cache sum stuff thats better that doesnt eat my ci minutes
       uses: Swatinem/rust-cache@v2.8.1
-    - name: Build
+    - name: fetch deps
+      run: apt install libwayland-dev       # should fix it probably...
+    - name: build
       run: cargo build --verbose
-    - name: Run tests
+    - name: run tests
       run: cargo test --verbose
-    - name: Lint
+    - name: lint
       run: cargo clippy --no-deps
 
