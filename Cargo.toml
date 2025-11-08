@@ -1,13 +1,16 @@
 [package]
-name = "game_remover-rust"
+name = "game-remover-rust"
 version = "0.1.0"
-edition = "2024"
-license = "AGPL-3.0-or-later"
+authors = ["pastaya <contact@pastaya.net>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-eframe = "0.33.0"
-egui-async = "0.2.3"
-egui_extras = "0.33.0"
-env_logger = "0.11.8"
-reqwest = "0.12.24"
-serde = { version = "1.0.228", features = ["derive"] }
+dioxus = { version = "0.7.1", features = [] }
+
+[features]
+default = ["desktop"]
+web = ["dioxus/web"]
+desktop = ["dioxus/desktop"]
+mobile = ["dioxus/mobile"]

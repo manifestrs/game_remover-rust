@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 use eframe::egui;
 use egui_async::EguiAsyncPlugin;
 
@@ -45,5 +46,21 @@ impl eframe::App for App {
             ui.label(egui::RichText::new("rewrite of sobakins game remover: https://github.com/Manifestor-cc/game-remover/").color(egui::Color32::DARK_GRAY));
             ui.label(egui::RichText::new("man idk how to make hyperlinks").color(egui::Color32::DARK_GRAY));
         });
+=======
+use dioxus::prelude::*;
+
+const MAIN_CSS: Asset = asset!("/assets/main.css");
+
+fn main() {
+    dioxus::launch(app);
+}
+
+#[component]
+fn app() -> Element {
+    rsx! {
+        document::Link { rel: "stylesheet", href: MAIN_CSS }
+        h1 { "hi" }
+        h2 { "making sure everything works!" }
+>>>>>>> 504caac (gl moving to dioxus)
     }
 }
