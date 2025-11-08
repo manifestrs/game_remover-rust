@@ -28,14 +28,14 @@ jobs:
           days-before-pr-close: -1
           repo-token: ${{ secrets.GITHUB_TOKEN }}
   build:
-
     runs-on: ubuntu-latest
 
     steps:
 
+    - name: Checkout
+    - uses: actions/checkout@v4
     - name: Rust Cargo cache
       uses: raviqqe/cargo-cache@v1
-    - uses: actions/checkout@v4
     - name: Build
       run: cargo build --verbose
     - name: Run tests
