@@ -32,7 +32,6 @@ jobs:
 
     steps:
 
-    - name: Checkout
     - uses: actions/checkout@v4
     - name: Rust Cargo cache
       uses: raviqqe/cargo-cache@v1
