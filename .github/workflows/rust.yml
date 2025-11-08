@@ -38,7 +38,7 @@ jobs:
     - name: Run tests
       run: cargo test --verbose
     - name: Lint
-      run: cargo clippy --fix
+      run: cargo clippy --no-deps
 
     - name: Rust Cargo cache
       uses: raviqqe/cargo-cache@v1
