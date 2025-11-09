@@ -35,8 +35,6 @@ jobs:
     - uses: actions/checkout@v4
     - name: cache sum stuff thats better that doesnt eat my ci minutes
       uses: Swatinem/rust-cache@v2.8.1
-    - name: fetch deps
-      run: sudo apt install libwayland-dev # lmao forgot root
     - name: build
       run: cargo build --verbose
     - name: run tests
